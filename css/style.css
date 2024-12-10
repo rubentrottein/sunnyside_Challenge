@@ -2,11 +2,15 @@
 
 @font-face {
     font-family: "barlow";
-    src: url("../fonts/barlow/Barlow-SemiBold.ttf");
+    src: url("../fonts/Barlow/Barlow-ExtraLight.ttf");
+}
+@font-face {
+    font-family: "barlow";
+    src: url("../fonts/Barlow/Barlow-Black.ttf");
 }
 @font-face {
     font-family: "fraunces";
-    src: url("../fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf");
+    src: url("../fonts/Fraunces/static/Fraunces_144pt_SuperSoft-Bold.ttf");
 }
 :root{
     /*Palette*/
@@ -14,7 +18,7 @@
     --colorB: hsl(51, 100%, 49%);
     --graphic : hsl(167, 40%, 24%);
     --photography : hsl(198, 62%, 26%);
-    --footer : hsl(168, 34%, 41%);
+    --footer : hsl(168, 38%, 51%);
     --neutral-darkblue: hsl(212, 27%, 19%);
     --neutral-verydarkgrayishblue: hsl(213, 9%, 39%);
     --neutral-darkgrayishblue: hsl(232, 10%, 55%);
@@ -25,15 +29,16 @@
 /********************** Styles Généraux **************************/
 *{
     margin:0;
-    font-family: "fraunces";
+    font-family: "barlow";
     list-style: none;
     text-decoration: none;
     Font-size: 18px;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-h1{
-    font-family: "barlow";
+h1, h2, h3{
+    font-family: "fraunces";
+    font-variant: small-caps;
     font-size: 5em;
 }
 header{
@@ -50,13 +55,14 @@ nav ul{
 }
 nav a{
     color: var(--neutral-white);
-    font-family: serif;
     transition: .5s;
 }
-nav a[href="#contact"]{
+nav li a[href="#contact"]{
+    font-family: "fraunces";
     padding: .8em;
     border-radius: 30px;
-    background: rgba(255,255,255,.8);
+    background: var(--neutral-white);
+    color: var(--neutral-darkblue);
 }
 .logo{
     fill:#FFF;
@@ -109,10 +115,11 @@ nav a[href="#contact"]{
 
 .presentation img{
     object-fit: cover;
+    width: 50%;
+    height: 50vmax;
 }
 .presentation{
     display: flex;
-    margin: 3em;
 }
 .presentation article{
     display: grid;
@@ -127,20 +134,31 @@ nav a[href="#contact"]{
 /*********************** Projects *******************************/
 #projects{
     display: flex;
-    justify-content: space-between;
-    min-height: 50vh;
-    width: 70%;
     margin: auto;
     color:var(--neutral-verydarkgrayishblue);
 }
 #projects article{
-    min-width: 50vmax;
     background: url("../images/desktop/image-graphic-design.jpg") no-repeat;
     background-size: cover;
+    display: grid;
+    width: 50%;
+    height: 50vmax;
+    place-content: end;
+    padding: 10vmax;
+    text-align: center;
 }
-
+#projects article h3{
+    text-align: center;
+    font-weight: bolder;
+    margin: 1em;
+    font-size: 3em;
+}
+#projects article p{
+    font-size: 1.5em;
+}
 #projects article:last-of-type{
     background: url("../images/desktop/image-photography.jpg") no-repeat;
+    background-size: cover;
 }
 
 /********************* Testimonials *******************/
@@ -173,21 +191,37 @@ nav a[href="#contact"]{
 }
 footer article{
     background: var(--footer);
+    color: var(--footer);
     text-align: center;
-    min-height: 30vh;
+    margin: auto;
+    min-height: 40vh;
     display: grid;
     place-content: center;
 
 }
+footer .end-nav, footer .end-nav a{
+    color: var(--neutral-verydarkgrayishblue);
+}
+footer svg{
+    fill: var(--neutral-verydarkgrayishblue);
+    display: block;
+    margin: auto;
+}
 footer nav,#contacts{
-    margin: 1em auto;
+    margin: 2em auto;
 
 }
 footer nav ul{
     min-width: 50%;
     gap : 2em;
 }
-
+footer .attribution{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:1em;
+}
 /*
 @media screen and (max-width : 375px){
     *{

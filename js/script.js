@@ -10,6 +10,7 @@ window.addEventListener("scroll",(e)=>{
         document.querySelector(".logo").style.fill= "var(--neutral-white)";
         for(let link of document.querySelectorAll("header a")){
             link.style.color= "var(--neutral-white)";
+            document.querySelector("[href='#contact'").style.color = "var(--neutral-verydarkgrayishblue)";
         }
     }
 })
